@@ -1,0 +1,23 @@
+Pseudocode
+Input: n
+n= minutes until chapel
+me= state of preparedness for chapel
+n  10
+k 1
+me  wake up
+Repeat for k <= n:
+k  k+1
+nn - k
+If n=9:
+	me me + brushTeeth
+If n = 8:
+	me me + washFace
+If n= 7:
+	me me + putInContacts
+If n>3, n<7:
+	meme + getDressed
+If n =3:
+	meme + runToChapel
+If n=0:
+	meme + sitQuietlyInChapel
+Output: me
