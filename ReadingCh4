@@ -1,0 +1,7 @@
+What was confusing:
+
+It’s said that “some people never completely come to grips” with recursion… 
+It seems very similar to proof by induction, which I never fully understood.
+I can’t understand why this method would ever be used when it has to repeat the task every time n increases by 1, just like an iterative function. 
+I also don’t understand how to use lists in a program other than “finding” one of the numbers in the list. 
+Can lists only have numbers?
