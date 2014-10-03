@@ -1,0 +1,7 @@
+9. Since mysterySum(0) is 0, mysterySum(1) is 3, mysterySum(5) is 15.
+
+11. Each time n is odd, two multiplications occur instead of one, so for power3(15), 8*2+7 (aka 23) multiplications occur.
+
+18. Keep splitting the coins into 3 groups and weighing 2 of the groups.
+Narrow down to the lighter pile until you find the lighter coin.
+4 weighings are needed.
