@@ -1,10 +1,16 @@
 9. Since mysterySum(0) is 0, mysterySum(1) is 3, mysterySum(5) is 15.
+/*Correct, and an explanation full points +3*/
 
 11. Each time n is odd, two multiplications occur instead of one, so for power3(15), 8*2+7 (aka 23) multiplications occur.
+/*explanation, yes +2, correct, no :( +0 */
 
 18. Keep splitting the coins into 3 groups and weighing 2 of the groups.
 Narrow down to the lighter pile until you find the lighter coin.
 4 weighings are needed.
+/*Efficient algorithm and correct +3*/
 
 The search function finds a particular value in a list. 
 A sequential search in a list in random order takes much longer than a binary search in an ordered list.
+/*Yes, good enough +1*/
+
+/*9/10 yay! */
