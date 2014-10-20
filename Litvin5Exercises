@@ -1,0 +1,188 @@
+6. This happens.
+Error: Main method not found in class litvin5.MovingDisk, please define the main method as:
+   public static void main(String[] args)
+   
+   
+7. The parenthese are required by syntax because it's the condition of the if statement.
+The braces are there because of style, to make reading the indented blocks easier.
+8. The program compiles with no errors but the message does not move across the screen because the x Position of the banner
+never changes. Since the if statement's condition ended with a semicolon, the "then" part of the statement never happens.
+9. 
+public boolean badIndentation(int maxLines)
+{
+	int lineCount = 3;
+	while (lineCount < maxLines)
+	{
+		System.out.println(lineCount);
+		lineCount++;
+	}
+	return true;
+}
+
+11. a) The window has no title at the top.
+b) The program compiles but the window is grey and empty and does not show any text or color.
+
+12. a) 
+package litvin5;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Morning extends JFrame
+{
+  private EasySound rooster;
+
+  /**
+   *   Constructor
+   */
+  public Morning()
+  {
+    super("Morning");
+    rooster = new EasySound("Assets/roost.wav");
+    rooster.play();
+
+    Container c = getContentPane();
+    c.setBackground(Color.WHITE);
+  }
+
+  public static void main(String[] args)
+  {
+    Morning morning = new Morning();
+    morning.setSize(300, 150);
+    morning.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    morning.setVisible(true);
+  }
+}  
+
+b)
+package litvin5;
+
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class Morning extends JFrame
+	implements ActionListener
+{
+  private EasySound rooster;
+  private int time;
+
+  /**
+   *   Constructor
+   */
+  public Morning()
+  {
+    super("Morning");
+    
+    time = 0;
+	Timer clock = new Timer(5000, this); //every 5 seconds
+	clock.start();
+/*	Some helpful comments from eclipse:
+ * 
+	  int delay = 1000; //milliseconds
+	  ActionListener taskPerformer = new ActionListener() {
+	      public void actionPerformed(ActionEvent evt) {
+	          //...Perform a task...
+	      }
+	  };
+	  new Timer(delay, taskPerformer).start();
+	  
+	  */
+
+    Container c = getContentPane();
+    c.setBackground(Color.WHITE);
+  }
+  
+  public void actionPerformed(ActionEvent e) //like in MovingDisk, except rooster not repaint()
+  {
+    time++;
+    rooster = new EasySound("Assets/roost.wav");
+    rooster.play();
+  }
+
+  public static void main(String[] args)
+  {
+    Morning morning = new Morning();
+    morning.setSize(300, 150);
+    morning.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    morning.setVisible(true);
+  }
+}  
+
+c)
+package litvin5;
+
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class Morning extends JFrame
+	implements ActionListener
+{
+  private EasySound rooster;
+  private EasySound moo;
+  private int time;
+  private int time2;
+
+  /**
+   *   Constructor
+   */
+  public Morning()
+  {
+    super("Morning");
+    
+    time = 0;
+	Timer clock = new Timer(10000, this); //every 10 seconds
+	clock.start();
+	
+	time2=5000;//2 different timers to alternate roosters and moos
+	Timer clock2 = new Timer(10000, this);
+	clock2.start();
+	
+/*	Some helpful comments from eclipse:
+ * 
+	  int delay = 1000; //milliseconds
+	  ActionListener taskPerformer = new ActionListener() {
+	      public void actionPerformed(ActionEvent evt) {
+	          //...Perform a task...
+	      }
+	  };
+	  new Timer(delay, taskPerformer).start();
+	  
+	  */
+
+  }
+  
+  public void actionPerformed(ActionEvent bird) //like in MovingDisk, except rooster not repaint()
+  {
+    time++;
+    
+    rooster = new EasySound("Assets/roost.wav");
+    rooster.play();
+    Container c = getContentPane();
+    c.setBackground(Color.WHITE);
+  }
+  
+  public void actionPerformed2(ActionEvent cow)
+  {
+	time2++;
+  	moo = new EasySound("Assets/moo.wav");
+  	moo.play();
+  	Container c = getContentPane();
+    c.setBackground(Color.BLACK);
+  }
+
+  public static void main(String[] args)
+  {
+    Morning morning = new Morning();
+    morning.setSize(300, 150);
+    morning.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    morning.setVisible(true);
+  }
+}  
+/* what actually happens:
+ * rooster crows twice successively every 10 seconds, white screen, and no moos
+ */
