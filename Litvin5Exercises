@@ -125,7 +125,6 @@ public class Morning extends JFrame
   private EasySound rooster;
   private EasySound moo;
   private int time;
-  private int time2;
 
   /**
    *   Constructor
@@ -135,12 +134,11 @@ public class Morning extends JFrame
     super("Morning");
     
     time = 0;
-	Timer clock = new Timer(10000, this); //every 10 seconds
+	Timer clock = new Timer(5000, this); //every 5 seconds
 	clock.start();
+	rooster = new EasySound("Assets/roost.wav");
+	moo = new EasySound("Assets/moo.wav");
 	
-	time2=5000;//2 different timers to alternate roosters and moos
-	Timer clock2 = new Timer(10000, this);
-	clock2.start();
 	
 /*	Some helpful comments from eclipse:
  * 
@@ -156,23 +154,21 @@ public class Morning extends JFrame
 
   }
   
-  public void actionPerformed(ActionEvent bird) //like in MovingDisk, except rooster not repaint()
+  public void actionPerformed(ActionEvent e) //like in MovingDisk
   {
     time++;
+    if (time%2==0){
+    	rooster.play();
+    	Container c = getContentPane();
+        c.setBackground(Color.WHITE);
+    }
     
-    rooster = new EasySound("Assets/roost.wav");
-    rooster.play();
+    else if (time%2==1){
+    moo.play();
     Container c = getContentPane();
-    c.setBackground(Color.WHITE);
-  }
-  
-  public void actionPerformed2(ActionEvent cow)
-  {
-	time2++;
-  	moo = new EasySound("Assets/moo.wav");
-  	moo.play();
-  	Container c = getContentPane();
     c.setBackground(Color.BLACK);
+    }
+    
   }
 
   public static void main(String[] args)
@@ -183,6 +179,3 @@ public class Morning extends JFrame
     morning.setVisible(true);
   }
 }  
-/* what actually happens:
- * rooster crows twice successively every 10 seconds, white screen, and no moos
- */
