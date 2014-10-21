@@ -179,3 +179,5 @@ public class Morning extends JFrame
     morning.setVisible(true);
   }
 }  
+
+Help from Whit on this last part!
