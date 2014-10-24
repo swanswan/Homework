@@ -17,6 +17,7 @@ The code is read left to right, so 1/2 is calculated as 0, and the answer is a d
 b= (double) temp;
 
 16. 
+
 package litvin6;
 
 import java.awt.*;
@@ -72,7 +73,8 @@ public class Bmi extends JFrame
 	  double kgs = (double)lbs*2.20;
 	  double meters = (double)inches*39.4;
 	  double msquared= meters*meters;
-	  return kgs/msquared;
+	  double bmi=kgs/msquared;
+	  return bmi;
   }
 
   public static void main(String[] args)
@@ -84,4 +86,4 @@ public class Bmi extends JFrame
   }
 }
 
-I can't figure out why but the BMI always comes out as 00.0
+I can't figure out why but the BMI is always 00.0
