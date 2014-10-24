@@ -1,0 +1,19 @@
+6. a) 0
+b) 0
+c) 5.0
+d) 5.0
+e) 3
+
+7. a) 105
+b) 19.0
+
+8. count += (total/pages -5) * words -1 ;
+
+9. Change System.out.println(1/2*(g*t*t)); to System.out.println(0.5*(g*t*t));
+The code is read left to right, so 1/2 is calculated as 0, and the answer is a double 0.0.
+1/2 and 0.5 are the same but 0.5 is a double, so with 0.5, the expected result is produced.
+
+12. (double) temp = a;
+b= (double) temp;
+
+16. 
